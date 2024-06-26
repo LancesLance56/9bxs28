@@ -50,15 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (date > daysInMonth) {
                     break;
                 } else {
-                    cell.appendChild(document.createTextNode(date));
+                    if (new Date().getMonth() === currentMonth && 6*i + j === currentDay + 1) {
+                        cell.style.backgroundColor = "#eaeaea";
+                        let bold = document.createElement("strong");
+                        bold.appendChild(document.createTextNode(date));
+                        cell.appendChild(bold);
+
+                    } else {
+                        cell.appendChild(document.createTextNode(date));
+                    }
 
                     date++;
-                }
-
-                if (new Date().getMonth() === currentMonth && 6*i + j === currentDay + 1) {
-                    cell.style.backgroundColor = "yellow"
-                    cell.appendChild(document.createElement("br"));
-                    cell.appendChild(document.createTextNode("(current date)"))
                 }
 
                 row.appendChild(cell);
