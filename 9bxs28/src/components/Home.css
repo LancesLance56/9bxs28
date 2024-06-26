@@ -1,0 +1,12 @@
+/* src/components/Home.css */
+#home {
+  padding: 20px;
+}
+
+#home h2 {
+  font-size: 24px;
+}
+
+#home p {
+  font-size: 16px;
+}
