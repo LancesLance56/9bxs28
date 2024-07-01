@@ -45,9 +45,12 @@ section {
   background-color: white;
   width: 80%;
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2rem auto auto;
+  /* Increased margin for separation */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Soft box shadow */
   border-radius: 8px;
+  /* Rounded corners */
 }
 
 section h2 {

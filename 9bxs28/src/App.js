@@ -1,6 +1,5 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
-import Assignments from './components/Assignments';
 import { database, ref, get, child } from './firebase';
 import './App.css';
 import './components/Assignments.css';
@@ -9,8 +8,10 @@ import './components/Assignments.css';
 import Home from './components/Home';
 import About from './components/About';
 import Schedule from './components/Schedule';
+import Assignments from './components/Assignments';
 import Resources from './components/Resources';
 import Contact from './components/Contact';
+
 
 const App = () => {
   const [assignments, setAssignments] = useState([]);
@@ -49,24 +50,14 @@ const App = () => {
       </header>
 
       <main>
-        <section id="home">
           <Home />
-        </section>
-        <section id="about">
           <About />
-        </section>
-        <section id="schedule">
           <Schedule />
-        </section>
         <section id="assignments">
           <Assignments assignments={assignments} />
         </section>
-        <section id="resources">
           <Resources />
-        </section>
-        <section id="contact">
           <Contact />
-        </section>
       </main>
 
       <footer>

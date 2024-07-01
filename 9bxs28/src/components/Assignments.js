@@ -23,6 +23,20 @@ const Assignments = () => {
     });
   }, []);
 
+  const toggleDescription = (index) => {
+    setAssignments((prevAssignments) =>
+      prevAssignments.map((assignment, i) => {
+        if (i === index) {
+          return {
+            ...assignment,
+            expanded: !assignment.expanded,
+          };
+        }
+        return assignment;
+      })
+    );
+  };
+
   return (
     <div className="assignments-container">
       <h2>Assignments</h2>
@@ -30,9 +44,16 @@ const Assignments = () => {
         {assignments.map((assignment, index) => (
           <li key={index} className="card">
             <h3>{assignment.title}</h3>
-            <p className="card-content">{assignment.description}</p>
+            <p className={`card-content ${assignment.expanded ? 'expanded' : ''}`}>
+              {assignment.description}
+            </p>
             <p className="card-deadline"><strong>Due Date:</strong> {assignment.due_date}</p>
-            <button className="show-more-btn">Show More</button>
+            <button
+              className="show-more-btn"
+              onClick={() => toggleDescription(index)}
+            >
+              {assignment.expanded ? 'Show Less' : 'Show More'}
+            </button>
           </li>
         ))}
       </ul>

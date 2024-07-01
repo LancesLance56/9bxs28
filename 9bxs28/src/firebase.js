@@ -1,5 +1,5 @@
 // src/firebase.js
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, child } from "firebase/database";
 
 // Your web app's Firebase configuration

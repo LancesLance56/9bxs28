@@ -9,11 +9,7 @@ function Schedule() {
 
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-  useEffect(() => {
-    renderCalendar(currentMonth, currentYear);
-  }, [currentMonth, currentYear]);
-
-  const renderCalendar = (month, year) => {
+    const renderCalendar = (month, year) => {
     const calendarBody = document.getElementById('calendar-body');
     calendarBody.innerHTML = '';
     document.getElementById('month-year').textContent = `${monthNames[month]} ${year}`;
@@ -26,20 +22,34 @@ function Schedule() {
       const row = document.createElement('tr');
       for (let j = 0; j < 7; j++) {
         const cell = document.createElement('td');
+
         if (i === 0 && j < firstDay) {
-          cell.appendChild(document.createTextNode(''));
+            cell.appendChild(document.createTextNode(''));
         } else if (date > daysInMonth) {
-          break;
+            break;
         } else {
-          cell.appendChild(document.createTextNode(date));
+          if (new Date().getMonth() === currentMonth && 6*i + j === new Date().getDate()) {
+            cell.style.backgroundColor = "#eaeaea";
+            let bold = document.createElement("strong");
+            bold.appendChild(document.createTextNode(date));
+            cell.appendChild(bold);
+
+          } else {
+            cell.appendChild(document.createTextNode(date));
+          }
           date++;
         }
+
         row.appendChild(cell);
       }
       calendarBody.appendChild(row);
     }
   };
-
+  
+  useEffect(() => {
+    renderCalendar(currentMonth, currentYear);
+  }, [currentMonth, currentYear, renderCalendar]);
+  
   return (
     <section id="schedule">
       <h2>Schedule</h2>

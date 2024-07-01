@@ -1,6 +1,6 @@
 /* src/components/Schedule.css */
 #schedule {
-  padding: 20px;
+  padding: 32px;
 }
 
 #schedule h2 {
@@ -9,7 +9,7 @@
 
 .calendar {
   width: 100%;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
