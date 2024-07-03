@@ -1,0 +1,12 @@
+/* src/components/About.css */
+#about {
+  padding: 20px;
+}
+
+#about h2 {
+  font-size: 24px;
+}
+
+#about p {
+  font-size: 16px;
+}

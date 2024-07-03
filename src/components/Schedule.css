@@ -1,0 +1,48 @@
+/* src/components/Schedule.css */
+#schedule {
+  padding: 32px;
+}
+
+#schedule h2 {
+  font-size: 24px;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  background-color: #555;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.calendar-table th {
+  background-color: #f2f2f2;
+}

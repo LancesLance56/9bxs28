@@ -1,0 +1,12 @@
+/* src/components/Contact.css */
+#contact {
+  padding: 20px;
+}
+
+#contact h2 {
+  font-size: 24px;
+}
+
+#contact p {
+  font-size: 16px;
+}

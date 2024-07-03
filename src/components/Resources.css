@@ -1,0 +1,12 @@
+/* src/components/Resources.css */
+#resources {
+  padding: 20px;
+}
+
+#resources h2 {
+  font-size: 24px;
+}
+
+#resources p {
+  font-size: 16px;
+}
